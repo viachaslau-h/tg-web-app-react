@@ -4,26 +4,26 @@ import ProductItem from '../ProductItem/ProductItem';
 import { useTelegram } from '../../hooks/useTelegram';
 
 const products = [
-    {id: '1', title: 'Джинсы', price: 1500, description: 'Прямые'},
-    {id: '2', title: 'Джинсы2', price: 1520, description: 'Прямые'},
-    {id: '3', title: 'Джинсы3', price: 1550, description: 'Прямые'},
-    {id: '4', title: 'Джинсы4', price: 1580, description: 'Прямые'},
-    {id: '5', title: 'Джинсы5', price: 1505, description: 'Прямые'},
-    {id: '6', title: 'Джинсы6', price: 1360, description: 'Прямые'},
-    {id: '7', title: 'Джинсы7', price: 1560, description: 'Прямые'},
-    {id: '8', title: 'Джинсы8', price: 1562, description: 'Прямые'},
+    {id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые'},
+    {id: '2', title: 'Куртка', price: 12000, description: 'Зеленого цвета, теплая'},
+    {id: '3', title: 'Джинсы 2', price: 5000, description: 'Синего цвета, прямые'},
+    {id: '4', title: 'Куртка 8', price: 122, description: 'Зеленого цвета, теплая'},
+    {id: '5', title: 'Джинсы 3', price: 5000, description: 'Синего цвета, прямые'},
+    {id: '6', title: 'Куртка 7', price: 600, description: 'Зеленого цвета, теплая'},
+    {id: '7', title: 'Джинсы 4', price: 5500, description: 'Синего цвета, прямые'},
+    {id: '8', title: 'Куртка 5', price: 12000, description: 'Зеленого цвета, теплая'},
 ]
 
 const getTotalPrice = (items = []) => {
     return items.reduce((acc, item) => {
-        return acc +=item.price
+        return acc += item.price
     }, 0)
 }
 
 const ProductList = () => {
 
     const [addedItems, setAddedItems] = useState([]);
-    const {tg} = useTelegram;
+    const {tg} = useTelegram();
     
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);
